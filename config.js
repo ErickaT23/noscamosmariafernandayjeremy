@@ -42,7 +42,7 @@ export const eventData = {
       "/images/F7.jpeg",
       "/images/F8.jpeg",
       "/images/F9.jpeg",
-      "/images/F10.jpeg",
+      "/images/F1.jpeg",
       "/images/F11.jpeg",
     ],
 
