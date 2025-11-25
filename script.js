@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //--- Botón para añadir al calendario ---
 window.addToCalendar = function () {
-  const calendarURL = "https://www.google.com/calendar/render?action=TEMPLATE&text=La%20boda%20de%20G%C3%A9nesis%20%26%20Jorge&dates=20250726/20250727&details=Misa%20Iglesia%20San%20Francisco%20(Zona%201)%20a%20las%2015:00%20hrs.%20Recepci%C3%B3n%20en%20Hotel%20Conquistador%20(Zona%204)%20a%20las%2018:00%20hrs.&location=Ciudad%20de%20Guatemala&sf=true&output=xml";
+  const calendarURL = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Nuestra+boda+Jeremy+Alberto+Valle+%26+Mar%C3%ADa+Fernanda+Felipe&dates=20260117/20260118&sf=true&output=xml";
   window.open(calendarURL, "_blank");
 }
 
@@ -183,10 +183,6 @@ document.getElementById('show-wishes').addEventListener('click', () => {
   }
 });
 
-
-  // --- No niños ---
-  document.getElementById('no-kids-policy').innerText = eventData.noKidsPolicy;
-
   // --- Final: Foto y Frase ---
   document.getElementById('final-photo').src = eventData.finalPhoto;
   document.getElementById('final-message').innerText = eventData.finalMessage;
@@ -252,17 +248,6 @@ document.getElementById('footer-logo').src = eventData.footer.logo;
   }, 1000);
 
 });
-function addToCalendar() {
-    const title = encodeURIComponent('Boda de Mariano & Maritza');
-    const details = encodeURIComponent('¡Acompáñanos en nuestra boda!');
-    const location = encodeURIComponent('Guatemala City, Guatemala');
-    const startDate = '20260727T170000Z'; // ⚡ Importante: Formato UTC YYYYMMDDTHHMMSSZ
-    const endDate = '20260737T230000Z';   // ⚡ Final estimado
-    
-    const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}&location=${location}&sf=true&output=xml`;
-  
-    window.open(googleCalendarUrl, '_blank');
-  }
   
   //OPTIMIZAR
   const params = new URLSearchParams(window.location.search);
@@ -270,7 +255,7 @@ const guestId = params.get("id");
 const guest = window.guests.find(g => g.id === guestId);
 
 if (guest) {
-  const formURL = `https://docs.google.com/forms/d/e/1FAIpQLSfYuZSSeuMHBNVGDP4UWwyFfV1-RnZcOys8Pz52WkjlXx9uvg/viewform?usp=pp_url&entry.42292443=${encodeURIComponent(guest.name)}&entry.800985369=${guest.passes}`;
+  const formURL = `https://docs.google.com/forms/d/e/1FAIpQLSfZQY5j5qySB1ZCRnye4ORlRYzNMunFUDF32GLksdfiXWnxqA/viewform?usp=pp_url&entry.42292443=${encodeURIComponent(guest.name)}&entry.800985369=${guest.passes}`;
   
   const confirmButton = document.getElementById('confirm-button');
   confirmButton.onclick = () => {

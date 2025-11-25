@@ -1,28 +1,28 @@
 export const eventData = {
     couple: {
-      names: "Mariano & Maritza",
-      date: "27 . 07 . 2026",
-      heroImage: "/images/pareja.svg"
+      names: "Jeremy & María Fernanda",
+      date: "17 . 01. 2026",
+      heroImage: "/images/FF.jpeg"
     },
     song: {
-      title: "Admv (cover) - Angie Camille",
-      file: "/Maluma - ADMV Cover Angie Camille.mp3"
+      title: "In Case You Didn't Know - Brett Young",
+      file: "/Incaseyoudidntkno.mp3"
     },
     ceremony: {
       ceremonyImage:"/images/ceremonia.svg",
-      place: "Iglesia San Francisco",
-      address: "6-34, 13 Calle 1, Zona 1, Cdad. de Guatemala",
-      date: "27 de Julio",
-      time: "17:00 hrs",
-      mapLink: "https://maps.app.goo.gl/F3hRkoQM8zVMiW9u6"
+      place: "Hotel Barceló - Jardin",
+      address: "7A Avenida 15-45, Cdad. de Guatemala",
+      date: "17 de Enero",
+      time: "18:00 hrs",
+      mapLink: "https://waze.com/ul/h9fxeh1mgb"
     },
     reception: {
       receptionImage:"/images/recepcion.svg",
-      place: "Hotel Conquistador",
-      address: "Via 5 4-68, Zona 4, Cdad. de Guatemala",
-      date: "27 de Julio",
+      place: "Hotel Barceló - Salón El Dorado",
+      address: "7A Avenida 15-45, Cdad. de Guatemala",
+      date: "17 de Enero",
       time: "19:00 hrs",
-      mapLink: "https://maps.app.goo.gl/qGEPHjSEeFPtQpVK7"
+      mapLink: "https://waze.com/ul/h9fxeh1mgb"
     },
 
     abroadGiftMessage: "Su presencia en nuestra boda es el mejor regalo que podríamos recibir. Si desean obsequiarnos algo más, una contribución económica será muy apreciada para ayudarnos a comenzar esta nueva etapa juntos.",
@@ -37,18 +37,18 @@ export const eventData = {
       }
     },  
     gallery: [
-      "/images/V1.jpg",
-      "/images/V2.jpg",
-      "/images/V3.jpg",
-      "/images/V4.jpg",
+      "/images/F2.jpeg",
+      "/images/F6.jpeg",
+      "/images/F7.jpeg",
+      "/images/F8.jpeg",
+      "/images/F9.jpeg",
     ],
 
-    noKidsPolicy: "Para disfrutar plenamente de esta celebración, nuestra boda será solo para adultos.",
-    finalPhoto: "/images/V3.jpg",
-    finalMessage: "Porque el amor se celebra con quienes más queremos, esperamos contar con su presencia en este día inolvidable.",
+    finalPhoto: "/images/FP.jpeg",
+    finalMessage: "Más valen dos que uno, porque obtienen más fruto de su esfuerzo. Si caen, el uno levanta al otro. ¡Ay del que cae y no tiene quien lo levante! - (Eclesiastés 4:9-10)",
     rsvp: {
       rsvpImage: "/images/rsvp.svg",
-      whatsapp: "https://wa.me/50236011737?text=Confirmo%20mi%20asistencia%20a%20la%20boda",
+      whatsapp: "https://docs.google.com/forms/d/e/1FAIpQLSfZQY5j5qySB1ZCRnye4ORlRYzNMunFUDF32GLksdfiXWnxqA/viewform?usp=header",
       email: "mailto:hello@thetwodesign.com"
     },
     footer: {

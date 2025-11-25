@@ -8,7 +8,7 @@
     --verde: #d5ead8;
     --lila: #e9d4ef;
     --text-color: #063702;
-    --accent-color: #8FBC8B;
+    --accent-color: #5d7a5a;
     
     /* Tipografías */
     --font-title: "Carattere", cursive;
@@ -40,7 +40,7 @@
   
   /* SECCIONES GENERALES */
   section {
-    padding: 40px 20px;
+    padding: 0px 20px;
     text-align: center;
   }
   
@@ -107,13 +107,16 @@
     align-items: center;
     font-family: var(--font-title);
     font-size: 2rem;
-    color: var(--text-color);
     cursor: pointer;
     z-index: 2;
   }
   #seal h2{
     margin: 0;
     font-size: 2.5rem;
+    background: linear-gradient(to right, #b29a68, #d4af37, #ffd700, #d4af37, #b29a68);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 20px;
   }
   /* Estado de apertura */
   .open #envelope-top {
@@ -129,7 +132,8 @@
   /* HERO (Foto inicial) */
   #hero {
     position: relative;
-    margin-top: 30px;
+    margin-top: 0;
+    padding: 0;
   }
   #hero img {
     width: 100%;
@@ -146,10 +150,17 @@
     height: auto;
   }
   .hero-text h1 {
-    margin-top: -250px;
-  }
+    margin-top: -260px;
+    background: linear-gradient(to right, #b29a68, #d4af37, #ffd700, #d4af37, #b29a68);;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 3px;
+}
   .hero-text h2{
-    margin-top: -20px;
+    margin-top: -28px;
+    background:linear-gradient(to right, #b29a68, #d4af37, #ffd700, #d4af37, #b29a68);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   /* SECCIÓN MÚSICA */
   #music-section {
@@ -157,6 +168,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
+    margin-top: -10px;
+    padding: 40px 20px;
   }
   
   button {
@@ -232,23 +245,47 @@
 }
 
   /* SECCIÓN CONTADOR */
+  #countdown-section {
+    background-image: url('/images/F4.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* O usa "contain" si no quieres recorte */
+    margin-top: -5px;
+    width: auto;
+    height: 600px;
+  }
+  #countdown-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(50, 80, 50, 0.3); /* verde suave semitransparente */
+    z-index: -1;
+  }
   #marriage-announcement {
     text-align: center;
     margin-bottom: 30px;
     padding: 0;
+    
   }
   #marriage-announcement h2 {
     font-family: var(--font-title);
     font-size: var(--font-size-title);
-    color: var(--text-color);
     margin-bottom: 10px;
+    background: linear-gradient(135deg, #fdf8f2, /* perla muy clara */ #f2e6d8, /* champagne suave */ #e5d5c0, /* beige satinado */ #fffaf5, /* luz nacarada */ #ddcbb5 /* dorado mate perlado */);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 5px;
   }
   #marriage-announcement p {
     font-family: var(--font-body);
     font-size: var(--font-size-text);
-    color: var(--text-color);
+    color: #fdf8f2;
     max-width: 600px;
     margin: 0 auto;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   }
   #countdown {
     display: flex;
@@ -256,9 +293,10 @@
     flex-wrap: wrap;
     gap: 5px;
     margin-top: 20px;
+    /* Fondo centrado */
   }
   .unit {
-    background: var(transparent);
+    background: rgba(255, 255, 255, 0.367);
     padding: 0;
     border-radius: 100%;
     width: 100px;
@@ -296,13 +334,22 @@
   }
   /* INVITADO y PASES */
   #guest-name-section {
-    background-color: #add2aa;
+    background-color: #5d7a5a;
+    padding: 40px 20px;
   }
   #passes-section{
-    background-color: #afd2accf;
+    background-color: #738d70;
+    padding: 40px 20px;
   }
   #guest-name-section p, #passes-section p {
     font-size: 1.5rem;
+    background: linear-gradient(135deg, #fdf8f2, /* perla muy clara */ #f2e6d8, /* champagne suave */ #e5d5c0, /* beige satinado */ #fffaf5, /* luz nacarada */ #ddcbb5 /* dorado mate perlado */);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 5px;
   }
   /* ITINERARIO */
   #itinerary-section {
@@ -435,6 +482,7 @@
   #gallery-section {
     background: transparent;
     border-radius: 10px;
+    padding: 40px 20px;
   }
   #gallery-section h2{
     font-size: var(--font-size-title-small);
@@ -452,8 +500,6 @@
     border-radius: 10px;
     box-shadow: var(--shadow);
     cursor: pointer;
-    transition: transform 0.3s;
-    filter: grayscale(0.7);
   }
   #gallery-container img:hover {
     transform: scale(1.05);
@@ -612,6 +658,7 @@
   #rsvp-section {
     background: transparent;
     border-radius: 10px;
+    padding: 20px 20px;
   }
   #rsvp-section h2{
     font-size: var(--font-size-title-small);
@@ -632,16 +679,16 @@
   #final-photo {
     width: 100%;
     height: auto;
-    filter: grayscale(0.7)
   }
   
   /* FRASE FINAL */
   #final-message-section {
     background-color: #eeffed;
     margin-top: -10px;
+    margin-bottom: -10px;
   }
   #final-message-section p{
-    font-size: var(--font-size-subtitle);
+    font-size: 1.5rem;
   }
   
   /* FOOTER */
@@ -861,7 +908,7 @@
   /* RESPONSIVE */
   @media (max-width: 768px) {
     h1 {
-      font-size: 2.2rem;
+      font-size: 2.25rem;
     }
     
     h2 {
@@ -889,5 +936,52 @@
     .parents-group {
       text-align: center;
     }
+  }
+  #album-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fdfdfd;
+  }
+  
+  .qr-container img {
+    width: 350px;
+    margin: 20px auto;
+    display: block;
+  }
+  
+  .upload-container {
+    margin-top: 20px;
+  }
+  
+  .upload-label {
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+  }
+  
+  .upload-label i {
+    margin-right: 10px;
+  }
+  
+  .upload-instructions {
+    font-size: 14px;
+    color: #777;
+    margin-top: 10px;
+  }
+  .section-divider {
+    width: 100%;
+    text-align: center;
+    margin: 40px 0; /* Espaciado arriba y abajo */
+  }
+  
+  .section-divider img {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    padding: 0;
   }
   

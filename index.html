@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mariano & Maritza</title>
-  <meta title="¡Nos casamos Mariano & Maritza!"/>
+  <title>Jeremy & María Fernanda</title>
+  <meta title="¡Nos casamos Jeremy & María Fernanda!"/>
   <meta name="description" content="Llego la hora de unir nuestras vidas para siempre."/>
-  <meta property="og:image" content="https://i.postimg.cc/6Qk9Qvzd/FOTOS-META-12.png" />
+  <meta property="og:image" content="https://images.pexels.com/photos/34916686/pexels-photo-34916686.png" />
   <link rel="preload" as="image" href="/images/sobre.svg">
   <link rel="preload" as="image" href="/images/pareja.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,7 @@
     <section id="envelope">
         <div id="envelope-top"></div>
          <div id="seal">
-            <h2>M | M</h2> <!-- Tus iniciales -->
+            <h2>J | M</h2> <!-- Tus iniciales -->
         </div>
         <div id="envelope-bottom"></div>
     </section>
@@ -93,7 +93,6 @@
     <!-- Cantidad de pases -->
     <section id="passes-section">
       <p>Invitación válida por <span id="passes"></span></p>
-      <p>Su mesa asignada es la no. <span id="guest-table"></span></p>
     </section>
 
         <!-- Bendiciones -->
@@ -103,14 +102,18 @@
               <div class="blessings-parents">
                 <div class="parents-group">
                   <h3>Padres de la Novio</h3>
-                  <p>Rolando Marroquin & Nilda de Marroquin</p>
+                  <p>Edna Dubón & Luis Valle</p>
                 </div>
                 <div class="parents-group">
                  <h3>Padres del Novia</h3>
-                 <p>Pablo Morales & Vilma de Morales</p>
+                 <p>Felipe García & Azucena Raymundo</p>
                 </div>
               </div>
         </section>
+
+        <div class="section-divider">
+          <img src="/images/F3.jpeg" alt="Separador decorativo" loading="lazy">
+        </div>
 
     <!-- Itinerario Ceremonia y Recepción -->
     <section id="itinerary-section">
@@ -302,6 +305,10 @@
       </div>
     </section>
     
+    <div class="section-divider">
+      <img src="/images/F1.jpeg" alt="Separador decorativo" loading="lazy">
+    </div>
+
     <!-- Lluvia de sobres -->
     <section id="gift-section">
       <img id="gift-image" alt="gift">
@@ -312,14 +319,14 @@
 
      <!-- Info de cuentas desplegable -->
      <div id="bank-info" class="bank-details">
-    <p><strong>Cuenta Bancaria:</strong><br> Banco del Uiverso<br>Cuenta Monetaria<br>No. 11115207840 <br>Mariano & Maritza</p>
+    <p><strong>Cuenta Bancaria:</strong><br>BAM<br>Cuenta Ahorro<br>No.4015855301<br>Jeremy Alberto Valle Dubón</p>
      </div>
      <!-- WhatsApp fuera del div -->
-      <p class="whatsapp-reminder">Envíanos un WhatsApp cuando hagas tu transferencia:</p>
+      <!--<p class="whatsapp-reminder">Envíanos un WhatsApp cuando hagas tu transferencia:</p>
       <div class="whatsapp-buttons">
     <button onclick="window.open('https://wa.me/50236011737?text=Hola%20Maritza,%20te%20confirmo%20mi%20transferencia.', '_blank')">Contactar a la Novia</button>
     <button onclick="window.open('https://wa.me/50236011737?text=Hola%20Mariano,%20te%20confirmo%20mi%20transferencia.', '_blank')">Contactar al Novio</button>
-      </div>
+      </div>-->
     </section>
 
     <!-- Dress code -->
@@ -361,11 +368,31 @@
       </div>
     </section>
 
-    <!-- No niños -->
-    <section id="no-children-section">
-      <h2>Solo adultos</h2>
-      <p id="no-kids-policy"></p>
-    </section>
+    <div class="section-divider">
+      <img src="/images/F5.jpeg" alt="Separador decorativo" loading="lazy">
+    </div>
+
+<!-- Álbum de Recuerdos -->
+<section id="album-section">
+  <h2>Álbum de Recuerdos</h2>
+  <p>¡Comparte tus mejores momentos con nosotros!</p>
+
+  <!-- Imagen del código QR -->
+  <div class="qr-container">
+    <img src="/images/QR.svg" alt="Código QR para subir fotos" id="qr-image">
+    <p>Escanea este código para subir tus fotos</p>
+  </div>
+
+  <!-- Botón para subir fotos -->
+  <div class="upload-container">
+    <label for="photo-upload" class="upload-label">
+      <i class="fa-solid fa-cloud-arrow-up"></i> Subir una foto
+    </label>
+    <input type="file" id="photo-upload" accept="image/*" style="display:none">
+    <p class="upload-instructions">*Tus fotos se subirán a nuestro álbum especial.</p>
+  </div>
+</section>
+
 
     <!-- Confirmación -->
     <section id="rsvp-section">
