@@ -77,63 +77,69 @@ const guests = [
   { id: "74", name: "Astrid Castillo", passes: 2, gender: "femenino" },
   { id: "75", name: "Luis Estrada", passes: 2, gender: "masculino" },
   { id: "76", name: "Helen Veliz", passes: 2, gender: "femenino" },
-  { id: "77", name: "Invitación sin nombre, solo con pases", passes: 2, gender: "mixto" },
-  { id: "78", name: "Invitación sin nombre, solo con pases", passes: 2, gender: "mixto" },
-  { id: "79", name: "Invitación sin nombre, solo con pases", passes: 2, gender: "mixto" },
-  { id: "80", name: "Invitación sin nombre, solo con pases", passes: 2, gender: "mixto" },
-  { id: "81", name: "Invitación sin nombre, solo con pases", passes: 2, gender: "mixto" },
+  { id: "77", name: "", passes: 2, gender: "mixto", label: "Te invitamos a nuestra boda" },
+  { id: "78", name: "", passes: 2, gender: "mixto", label: "Te invitamos a nuestra boda" },
+  { id: "79", name: "", passes: 2, gender: "mixto", label: "Te invitamos a nuestra boda" },
+  { id: "80", name: "", passes: 2, gender: "mixto", label: "Te invitamos a nuestra boda" },
+  { id: "81", name: "", passes: 2, gender: "mixto", label: "Te invitamos a nuestra boda" },
   { id: "82", name: "Eva Piedrasanta", passes: 2, gender: "femenino" },
   { id: "83", name: "Regina Rodas", passes: 2, gender: "femenino" },
   { id: "84", name: "Sonia Recinos", passes: 1, gender: "femenino" },
-  { id: "85", name: "Te invitamos a nuestra boda", passes: 1, gender: "mixto" },
-  { id: "86", name: "Te invitamos a nuestra boda", passes: 2, gender: "mixto" },
-  { id: "87", name: "Te invitamos a nuestra boda", passes: 3, gender: "mixto" }
+  { id: "85", name: "", passes: 1, gender: "mixto", label: "Te invitamos a nuestra boda"},
+  { id: "86", name: "", passes: 2, gender: "mixto", label: "Te invitamos a nuestra boda" },
+  { id: "87", name: "", passes: 3, gender: "mixto", label: "Te invitamos a nuestra boda" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
   const queryParams = new URLSearchParams(window.location.search);
   const guestId = queryParams.get("id");
   const guest = guests.find(g => g.id === guestId);
-  
-  
+
   const guestNameSection = document.getElementById('guest-name-section');
   const passesSection = document.getElementById('passes-section');
-  
-  
+
   if (guest) {
-  // Mostrar número de pases
-  if (passesSection) {
-  passesSection.classList.add('visible');
-  document.getElementById('passes').textContent = `${guest.passes} ${guest.passes === 1 ? 'pase' : 'pases'}`;
-  }
-  
-  
-  // Mostrar nombre solo si no es una invitación genérica
-  if (guest.name.includes("Invitación sin nombre")) {
-  if (guestNameSection) guestNameSection.style.display = 'none';
+    // Mostrar sección de pases
+    if (passesSection) {
+      passesSection.classList.add('visible');
+      document.getElementById('passes').textContent = `${guest.passes} ${guest.passes === 1 ? 'pase' : 'pases'}`;
+    }
+
+    // Mostrar sección de nombre solo si hay contenido que mostrar
+    if (!guest.name || guest.name.trim() === "") {
+      // No hay nombre → usar label como mensaje visual, si existe
+      if (guest.label && guestNameSection) {
+        guestNameSection.classList.add("visible");
+        document.getElementById("guest-name").textContent = guest.label;
+      } else if (guestNameSection) {
+        // Si tampoco hay label, ocultar sección
+        guestNameSection.style.display = "none";
+      }
+    } else {
+      // Mostrar saludo completo con nombre
+      let invitationText = `¡${guest.name}, `;
+
+      if (guest.passes === 1) {
+        invitationText += guest.gender === "femenino" ? "estás invitada!" : "estás invitado!";
+      } else {
+        invitationText += guest.gender === "femenino" ? "están invitadas!" : "están invitados!";
+      }
+
+      if (guestNameSection) {
+        guestNameSection.classList.add("visible");
+        document.getElementById("guest-name").textContent = invitationText;
+      }
+    }
+
   } else {
-  let invitationText = `¡${guest.name}, `;
-  
-  
-  if (guest.passes === 1) {
-  invitationText += guest.gender === "femenino" ? "estás invitada!" : "estás invitado!";
-  } else {
-  invitationText += guest.gender === "femenino" ? "están invitadas!" : "están invitados!";
+    // Invitado no encontrado
+    if (guestNameSection) {
+      guestNameSection.classList.add('visible');
+      document.getElementById('guest-name').textContent = `¡Invitado no encontrado!`;
+    }
+    const invitationInfo = document.querySelector('.invitation-info-section');
+    if (invitationInfo) invitationInfo.style.display = 'none';
   }
-  
-  
-  if (guestNameSection) {
-  guestNameSection.classList.add('visible');
-  document.getElementById('guest-name').textContent = invitationText;
-  }
-  }
-  } else {
-  // Invitado no encontrado
-  if (guestNameSection) guestNameSection.classList.add('visible');
-  document.getElementById('guest-name').textContent = `¡Invitado no encontrado!`;
-  const invitationInfo = document.querySelector('.invitation-info-section');
-  if (invitationInfo) invitationInfo.style.display = 'none';
-  }
-  });
+});
 
 window.guests = guests;
