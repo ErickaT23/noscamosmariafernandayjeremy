@@ -94,24 +94,46 @@ document.addEventListener("DOMContentLoaded", () => {
   const queryParams = new URLSearchParams(window.location.search);
   const guestId = queryParams.get("id");
   const guest = guests.find(g => g.id === guestId);
-
+  
+  
+  const guestNameSection = document.getElementById('guest-name-section');
+  const passesSection = document.getElementById('passes-section');
+  
+  
   if (guest) {
-    let invitationText = `¡${guest.name}, `;
-
-    if (guest.passes === 1) {
-      invitationText += guest.gender === "femenino" ? "estás invitada!" : "estás invitado!";
-    } else {
-      invitationText += guest.gender === "femenino" ? "están invitadas!" : "están invitados!";
-    }
-
-    document.getElementById('guest-name').textContent = invitationText;
-    document.getElementById('passes').textContent = `${guest.passes} ${guest.passes === 1 ? 'pase' : 'pases'}`;
-    
-  } else {
-    document.getElementById('guest-name').textContent = `¡Invitado no encontrado!`;
-    const invitationInfo = document.querySelector('.invitation-info-section');
-    if (invitationInfo) invitationInfo.style.display = 'none';
+  // Mostrar número de pases
+  if (passesSection) {
+  passesSection.classList.add('visible');
+  document.getElementById('passes').textContent = `${guest.passes} ${guest.passes === 1 ? 'pase' : 'pases'}`;
   }
-});
+  
+  
+  // Mostrar nombre solo si no es una invitación genérica
+  if (guest.name.includes("Invitación sin nombre")) {
+  if (guestNameSection) guestNameSection.style.display = 'none';
+  } else {
+  let invitationText = `¡${guest.name}, `;
+  
+  
+  if (guest.passes === 1) {
+  invitationText += guest.gender === "femenino" ? "estás invitada!" : "estás invitado!";
+  } else {
+  invitationText += guest.gender === "femenino" ? "están invitadas!" : "están invitados!";
+  }
+  
+  
+  if (guestNameSection) {
+  guestNameSection.classList.add('visible');
+  document.getElementById('guest-name').textContent = invitationText;
+  }
+  }
+  } else {
+  // Invitado no encontrado
+  if (guestNameSection) guestNameSection.classList.add('visible');
+  document.getElementById('guest-name').textContent = `¡Invitado no encontrado!`;
+  const invitationInfo = document.querySelector('.invitation-info-section');
+  if (invitationInfo) invitationInfo.style.display = 'none';
+  }
+  });
 
 window.guests = guests;
