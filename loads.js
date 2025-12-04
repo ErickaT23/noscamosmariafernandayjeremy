@@ -87,7 +87,8 @@ const guests = [
   { id: "84", name: "Sonia Recinos", passes: 1, gender: "femenino" },
   { id: "85", name: "", passes: 1, gender: "mixto", label: "Te invitamos a nuestra boda"},
   { id: "86", name: "", passes: 2, gender: "mixto", label: "Te invitamos a nuestra boda" },
-  { id: "87", name: "", passes: 3, gender: "mixto", label: "Te invitamos a nuestra boda" }
+  { id: "87", name: "", passes: 3, gender: "mixto", label: "Te invitamos a nuestra boda" },
+  {id: "88", name:"Familia Camel Raymundo", passes:"4", gender:"mixto"}
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
